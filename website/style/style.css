@@ -1,0 +1,359 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  background: url("/data/images/uog-j.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Inter Tight', sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(121, 121, 121, 0.3);
+  /* Semi-transparent overlay */
+  z-index: 1;
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.intro {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.5rem;
+  margin-top:120px;
+}
+
+.intro p {
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  color: #333;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.helpbutton {
+  padding-top: 10px;
+  padding-left: 20px;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1.0, 1.0, 1.0, 0.9);
+  z-index: 1000;
+}
+
+.overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #E3D9CA;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.overlay-content h1 {
+  margin-bottom: 20px;
+}
+
+.overlay-content p {
+  font-size: 16px;
+  background-color: #95A792;
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin: 10px 0;
+}
+
+.closeOverlay {
+  padding: 12px 24px;
+  background-color: #596C68;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.closeOverlay:hover {
+  background-color: #465A54;
+}
+
+/* Container for floating images */
+.floating-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+/* Container for the floating image and its caption */
+.image-container {
+  text-align: center;
+  margin: 0 15px;
+}
+
+/* Style for the image captions */
+.image-caption {
+  font-size: 0.9rem;
+  color: #eae6e6;
+  margin-top: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(6, 5, 5, 0.953);
+}
+
+/* Floating video styles */
+.floating {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: auto; /* Adjust as needed */
+  margin-bottom: 0;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Different delays to each video container */
+.floating-images .image-container:nth-of-type(1) .floating {
+  animation-delay: 0s;
+}
+
+.floating-images .image-container:nth-of-type(2) .floating {
+  animation-delay: 1s;
+}
+
+.floating-images .image-container:nth-of-type(3) .floating {
+  animation-delay: 2s;
+}
+
+/* Keyframes for floating effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.features {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.feature {
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  line-height: 1.5;
+}
+
+
+
+.profile-cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.profile-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.profile-image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e5e9f4;
+  margin-bottom: 10px;
+}
+
+.profile-info h2 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.profile-info p {
+  color: #666;
+  font-style: italic;
+}
+
+
+@media (max-width: 800px) {
+  .profile-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns for smaller screens */
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-cards-container {
+    grid-template-columns: 1fr;
+    /* 1 column for very small screens */
+  }
+}
+
+
+/*STOLE THIS RAINBOW OUTLINE FROM CODEPEN DELETE EVERYTHING UNDERNEATH HERE TO REMOVE*/
+
+
+/**
+ * `@property` is required for the animation to work.
+ * Without it, the angle values won’t interpolate properly.
+ *
+ * @see https://dev.to/afif/we-can-finally-animate-css-gradient-kdk
+ */
+@property --bg-angle {
+  inherits: false;
+  initial-value: 0deg;
+  syntax: "<angle>";
+}
+
+/**
+   * To animate the gradient, we set the custom property to 1 full
+   * rotation. The animation starts at the default value of `0deg`.
+   */
+@keyframes spin {
+  to {
+    --bg-angle: 360deg;
+  }
+}
+
+
+article {
+  /* add the animation, but pause it by default */
+  animation: spin 2.5s infinite linear paused;
+
+  /**
+     * Using `background-origin` we can create a “border” using two gradients. And to
+     * make the gradients better-looking, we use OKLCH.
+     *
+     * @see https://developer.mozilla.org/en-US/docs/Web/CSS/background-origin
+     * @see https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl
+     */
+  background:
+    /* Background colors don’t work with `background-origin`, so use a gradient. */
+    linear-gradient(to bottom,
+      oklch(93.24% 0 124.94 / 95%),
+      oklch(85.31% 0 124.94 / 95%)) padding-box,
+    /* ends at inner border edges */
+    conic-gradient(from var(--bg-angle) in oklch longer hue,
+      oklch(1 0.37 0) 0 0) border-box;
+  /* extends to outer border edges */
+
+  /* a clear border lets the background gradient shine through */
+  border: 6px solid transparent;
+
+  /* unpause the animation on hover */
+  &:hover {
+    animation-play-state: running;
+  }
+}
+
+/******************************************************************
+   * Other styles to make the demo look nice
+   ******************************************************************/
+
+main {
+  background:
+    radial-gradient(circle,
+      oklch(0.15 0.2 330 / 0),
+      oklch(0.15 0.2 330 / 1)),
+    linear-gradient(344deg in oklch,
+      oklch(0.3 0.37 310),
+      oklch(0.35 0.37 330),
+      oklch(0.3 0.37 310));
+  display: grid;
+  height: 100svh;
+  place-items: center;
+}
+
+article {
+  border-radius: 1rem;
+  color: #333;
+  padding: 1rem;
+
+
+  & h1 {
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  & p {
+    margin: 0.75rem 0 0;
+  }
+}

@@ -1,0 +1,118 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 200;
+    text-shadow: 1px 1px #A9A9A9;
+    margin-top: 20px;
+    margin-bottom: 7%;
+    text-align: center;
+    margin: 20px;
+
+}
+
+form {
+    width: 50%;
+    margin-top: 20px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+textarea,
+input[type="number"],
+input[type="submit"] {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 400px; 
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 400px; 
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #939393;
+    box-sizing: border-box;
+    background-color: rgba(3, 3, 3, 0.4);
+    color: #ffffff;   
+}
+
+button[type="submit"] {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 80%;
+    max-width: 220px; 
+    padding: 8px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    transform: translateX(5px);
+    animation: shake 0.3s ease;
+    background-color: #7e2b2b;
+    color: #ffffff;
+}
+
+@keyframes shake {
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+canvas {
+    background-color: rgb(255, 255, 255);
+    display: block;
+    margin: auto;
+    border-radius: 20px;
+    opacity: 90%;
+    max-width: 1000px;
+    width: 100%;
+}
+
+body {
+    font-family: 'Inter Tight', sans-serif;
+    text-align: left;
+    margin: 0px;
+    margin-top: 120px;
+    overflow: auto;
+    color: #000000;
+    position: relative;
+    background: url("/data/images/johnstonHall.jpg");
+    background-size: cover;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 480px) {
+    h1{
+        font-size: 30px;
+    }
+
+    .body-div{
+        width: 80%;
+    }
+}

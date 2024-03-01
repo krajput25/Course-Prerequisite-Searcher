@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Inter Tight', sans-serif;
+    text-align: left;
+    margin: 0px;
+    margin-top: 120px;
+    overflow: auto;
+    color: #000000;
+    position: relative;
+    background: url("/data/images/guelphlibrary.png");
+    background-size: cover;
+}
+
+.endpointPost {
+    margin: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #91d4b5;
+    padding: 10px;
+    border-radius: 7px;
+    background: #e8f6f0;
+}
+
+.endpointPut {
+    margin: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #fcc480;
+    padding: 10px;
+    border-radius: 7px;
+    background: #fbf1e6;
+}
+
+.endpointGet {
+    margin: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #99bcdf;
+    padding: 10px;
+    border-radius: 7px;
+    background: #ebf3fb;
+}
+
+.endpointDelete {
+    margin: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #faa1a1;
+    padding: 10px;
+    border-radius: 7px;
+    background: #fae7e7;
+}
+
+.methodPost {
+    display: inline-block;
+    background-color: #49cc90;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.methodPut {
+    display: inline-block;
+    background-color: #fca130;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.methodGet {
+    display: inline-block;
+    background-color: #61affe;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.methodDelete {
+    display: inline-block;
+    background-color: #f93e3e;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.subTitle {
+    display: inline-block;
+    font-size: 17px;
+    color: #000000;
+    font-weight: lighter;
+}
+
+.endpoint-info p {
+    margin: 30px;
+}
+
+.parameter {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.8s ease-in-out;
+}
+
+.parameter.open {
+    max-height: 1000px;
+    /* Adjust the maximum height as needed */
+    border-top: 1px solid black;
+}
+
+.dropdown {
+    display: none;
+    padding: 10px;
+    background-color: #000000;
+    border: 1px solid #000000;
+    border-radius: 3px;
+}
+
+.params {
+    text-decoration: solid;
+}
+
+.paramTitle {
+    font-style: italic;
+}
+
+h2 {
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 200;
+    text-shadow: 1px 1px #A9A9A9;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    text-align: left;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 200;
+    text-shadow: 1px 1px #A9A9A9;
+    margin-top: 5%;
+    margin-bottom: 7%;
+    text-align: left;
+    margin: 20px;
+}
+
+ol,
+ul {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: left;
+    margin: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: left;
+    margin: 20px;
+}
+
+code {
+    background-color: #f4f4f4;
+    padding: 2px 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Inter Tight', sans-serif;
+    text-align: left;
+    margin: 0px;
+}
+
+textarea {
+    font-size: 16px;
+    width: 100%;
+    height: 500px;
+    max-height: 200px;
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #1f1f1f;
+    color: #acb7bf;
+    border: 1px solid #acb7bf;
+    border-radius: 7px;
+    overflow: auto;
+}
+
+.content {
+    height: 100vh;
+    width: 100%;
+    margin: 8px;
+}
+
+.verticallycentereddiv {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content:before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: .1;
+    z-index: -1;
+    background: url("../data/images/background.jpg");
+    background-size: cover;
+}
+
+.title {
+    font-size: 45px;
+    font-family: 'Inter Tight', sans-serif;
+    text-align: center;
+    font-style: italic;
+    font-weight: 100;
+    text-shadow: 1px 1px #A9A9A9;
+    margin-top: 5%;
+    margin-bottom: 7%;
+}
+
+.title.small {
+    font-size: 25px;
+    margin-top: 1%;
+}
+
+.helpbutton {
+    padding-top: 10px;
+    padding-left: 20px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(1.0, 1.0, 1.0, 0.9);
+    z-index: 1000;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    max-width: 800px;
+    transform: translate(-50%, -50%);
+    background-color: #E3D9CA;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter Tight', sans-serif;
+}
+
+.overlay-content h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.overlay-content p {
+    font-size: 16px;
+    background-color: #95A792;
+    padding: 8px 15px;
+    border-radius: 6px;
+    margin: 10px 0;
+}
+
+.closeOverlay {
+    padding: 12px 24px;
+    background-color: #596C68;
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.closeOverlay:hover {
+    background-color: #465A54;
+}
+
+#prerequisiteDisplay,
+#courseInfoDisplay,
+#departmentDisplay,
+#departmentCodesDisplay,
+#getByIdDisplay,
+#getPrerequisitesByDepartment,
+#getPrerequisitesByCourse {
+    font-size: 16px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    padding: 10px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', monospace;
+    background-color: #1f1f1f;
+    color: #acb7bf;
+}
+
+.titleDiv {
+    cursor: pointer;
+}
+
+/*for mobile*/
+@media only screen and (max-width: 480px) {
+    .subTitle{
+        font-size: 15px;
+    }
+    .subTitle p{
+        margin: 0;
+    }
+
+    .parameter{
+        overflow: auto;
+    }
+}

@@ -1,0 +1,318 @@
+
+body {
+    font-family: 'Public Sans';
+    text-align: left;
+    margin: 0px;
+    margin-top: 120px;
+    overflow: auto;
+    color: #000000;
+    position: relative;
+    background: url("/data/images/Gryphon.jpg");
+    background-size: cover;
+    margin-bottom: 30px;
+}
+
+text {
+    text-transform: uppercase;
+}
+
+.course-planner {
+    width: 89%; 
+    background-color: rgba(255,255,255,0.8);
+    padding: 40px;
+    border-radius: 13px;
+    max-width: 600px;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    position: relative;
+    background: #ffff;
+    border-radius: 5px;
+}
+
+.dropdown-container {
+    position: relative;
+    z-index: 102; /* Adjust this value as needed */
+}
+
+.search-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+#courseCode, #searchCourseCode {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+.course-card {
+    overflow: hidden;
+    width: 80%;
+    max-width: 650px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.content {
+    perspective: 1000px;
+}
+
+.course-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+
+.course-card .content-container {
+    max-height: 1000px;
+    /* Set a large max-height initially */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    /* Transition on max-height */
+}
+
+.course-card.collapsed .content-container {
+    max-height: 0;
+    /* Set the collapsed max-height to 0 */
+}
+
+.course-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.course-card p {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.error-card {
+    background-color: #fff;
+    /* White background */
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto 0;
+    /* Center the card with 20px margin at the top */
+    max-width: 400px;
+    /* Adjust the width as needed */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    color: red;
+    /* Set the color of the error text */
+}
+
+/*Zach's Aesthetics Below*/
+
+.title-container {
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.title-container h3 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.title-container::after {
+    content: "⇩ Click to Expand ⇩";
+    font-size: 10px;
+    color: #999;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.course-card.collapsed .content-container {
+    max-height: 0;
+    padding: 0 15px;
+}
+
+.course-card:not(.collapsed) .title-container::after {
+    content: "⇧ Click to Collapse ⇧";
+}
+
+
+input[type="text"] {
+    outline: none;
+}
+
+.result_box ul,
+.result_box2 ul {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 101;
+    width: calc(100% - 20px);
+    top: 100%;
+    left: 0;
+}
+
+
+.result_box ul li,
+.result_box2 ul li {
+    list-style: none;
+    border-radius: 3px;
+    padding: 10px 8px;
+    cursor: pointer;
+}
+
+.result_box ul li:hover,
+.result_box2 ul li:hover,
+#courseCode:focus + .result_box ul li,
+#searchCourseCode:focus + .result_box2 ul li {
+    background-color: #e9f3ff;
+}
+
+.result_box ul li.selected {
+    background-color: #e9f3ff;
+}
+
+.result_box ul li:hover,
+.result_box ul li:focus,
+.result_box2 ul li:hover,
+.result_box2 ul li:focus {
+    background-color: #e9f3ff;
+}
+
+.result_box ul li:hover, .result_box2 ul li:hover{
+    background-color: #e9f3ff;
+}
+
+.box-left, .box-right {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 60px;
+}
+    
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 10px; 
+    margin-top: 80px;
+}
+
+
+.filter-options {
+    padding-top: 10px;
+}
+
+.filter-options div {
+    margin-bottom: 10px;
+}
+
+input#creditRequirementsCheckbox,
+input#noPrerequisitesCheckbox,
+input#codesOnlyCheckbox {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+#searchByDepartmentCheckbox{
+    cursor: pointer;
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+.course-card-codeonly {
+    overflow: hidden;
+    width: 30%;
+    max-width: 650px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    text-align: center;
+    font-size: large;
+}
+
+.selected {
+    background-color: #e9f3ff; /* Or any style you prefer for highlighting */
+  }
+  
+
+/*for mobile*/
+@media only screen and (max-width: 480px) {
+    body{
+        background-size: auto;
+    }
+
+    .container{
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .course-planner{
+        padding: 15px;
+    }
+
+        .box-left,
+        .box-right{
+            padding: 10px;
+        }
+
+    h1{
+        font-size: 25px;
+    }
+
+    .course-card{
+        width: 75%;
+    }
+}

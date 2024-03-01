@@ -1,0 +1,27 @@
+stages: 
+  - build main
+
+build-job:
+  stage: build main
+  # Get the latest sprint branch
+  script:
+    - echo "Resetting database!"
+    - sudo chmod 777 ./website/data/database_scripts/reset_db.sh
+    - website/data/database_scripts/reset_db.sh
+    - echo "Running PHPUnit tests!"
+    - website/data/database_scripts/reset_testing_db.sh
+    - sudo cp ./website/api/courses/index.php ./tests/courses.php
+    - sudo cp ./website/api/courses/prerequisites/index.php ./tests/prerequisites.php
+    - sed -i -e 's/course_db/testing_db/g' ./tests/courses.php
+    - sed -i -e 's/course_db/testing_db/g' ./tests/prerequisites.php
+    - phpunit
+    - echo "Pushing code onto main branch!"
+    - sudo rm -rf /var/www/html
+    - sudo mkdir /var/www/html
+    - sudo cp -a ./website/. /var/www/html
+  tags:
+    - VM
+  only:
+    - sprint7
+    - sprint8
+    - sprint9
